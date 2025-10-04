@@ -1,212 +1,193 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Portfolio - Nathan CHERIMONT</title>
-    <style>
-        /* ===== STYLE GLOBAL ===== */
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f8fc;
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Nathan CHERIMONT</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
 
-        h1, h2 {
-            margin: 0;
-        }
+    /* HEADER */
+    header {
+      background-color: #002244;
+      color: white;
+      padding: 30px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
+    header img {
+      width: 100px;
+      height: auto;
+    }
 
-        /* ===== HEADER ===== */
-        header {
-            background: linear-gradient(90deg, #004aad, #0077ff);
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-            position: relative;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-        }
+    header div {
+      text-align: center;
+    }
 
-        header img {
-            position: absolute;
-            top: 10px;
-            width: 120px;
-            height: auto;
-            border-radius: 10px;
-        }
+    h1 {
+      margin: 0;
+      font-size: 2.2em;
+      letter-spacing: 1px;
+    }
 
-        .plane-left {
-            left: 20px;
-        }
+    h2 {
+      color: #003366;
+      font-size: 1.6em;
+      margin-bottom: 10px;
+    }
 
-        .engine-right {
-            right: 20px;
-        }
+    /* LAYOUT PRINCIPAL */
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+      padding: 40px;
+    }
 
-        header h1 {
-            font-size: 38px;
-            letter-spacing: 1px;
-        }
+    /* Colonnes verticales */
+    .col {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
 
-        header h2 {
-            margin-top: 10px;
-            font-size: 22px;
-            font-weight: normal;
-        }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s ease-in-out;
+    }
 
-        header p {
-            font-size: 18px;
-            margin: 5px 0;
-        }
+    .card:hover {
+      transform: translateY(-5px);
+    }
 
-        /* ===== SECTION ===== */
-        section {
-            background-color: white;
-            margin: 30px auto;
-            padding: 30px 25px;
-            max-width: 900px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
 
-        section h2 {
-            color: #004aad;
-            font-size: 26px;
-            border-bottom: 2px solid #0077ff;
-            padding-bottom: 5px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
+    p {
+      color: #333;
+      font-size: 1.05em;
+      line-height: 1.5;
+    }
 
-        section img {
-            display: block;
-            margin: 0 auto 15px auto;
-            width: 120px;
-            opacity: 0.9;
-        }
-
-        section p, section li {
-            font-size: 17px;
-            line-height: 1.6;
-        }
-
-        ul {
-            padding-left: 25px;
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background-color: #004aad;
-            color: white;
-            text-align: center;
-            padding: 25px 15px;
-            font-size: 18px;
-            margin-top: 40px;
-        }
-
-        footer a {
-            color: #fff;
-            text-decoration: none;
-        }
-    </style>
+    /* FOOTER */
+    footer {
+      background-color: #002244;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.1em;
+      letter-spacing: 0.5px;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- ===== HEADER ===== -->
-    <header>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Airplane_silhouette.png" alt="Avion" class="plane-left">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Jet_engine_icon.png" alt="Moteur" class="engine-right">
-        <h1>CHERIMONT Nathan</h1>
-        <h2>Étudiant en BTS Aéronautique</h2>
-        <p>Lycée Gérard Etheve – Promotion 2025-2026</p>
-    </header>
+  <!-- HEADER -->
+  <header>
+    <!-- Image avion (gauche du header) -->
+    <img src="images/avion.png" alt="avion gauche">
 
-    <!-- ===== PROFIL ===== -->
-    <section id="profil">
-        <img src="https://cdn-icons-png.flaticon.com/512/2922/2922506.png" alt="Profil">
+    <div>
+      <h1>Nathan CHERIMONT</h1>
+      <p>Étudiant en BTS Aéronautique – Lycée Gérard Etheve</p>
+      <p>Université du Tampon – La Réunion</p>
+    </div>
+
+    <!-- Image moteur (droite du header) -->
+    <img src="images/moteur.png" alt="moteur avion">
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- Colonne gauche -->
+    <div class="col">
+      <div class="card">
+        <!-- Image pour ton profil -->
+        <img src="images/profil.jpg" alt="Photo de profil">
         <h2>Profil</h2>
-        <p><strong>Téléphone :</strong> 0692 37 36 64</p>
-        <p><strong>Email :</strong> cherimontnathan@gmail.com</p>
-        <p><strong>Adresse :</strong> 49 bis rue Marcel, Goulette, Sainte-Marie 97438</p>
-        <p><strong>Date de naissance :</strong> 14/04/2006</p>
-        <p><strong>Langues :</strong></p>
-        <ul>
-            <li>Français : courant</li>
-            <li>Anglais (LV1) : intermédiaire</li>
-            <li>Allemand (LV2)</li>
-        </ul>
-        <p><strong>Loisirs :</strong> sport de combat, randonnée, films, lecture</p>
-    </section>
+        <p>
+          Né le 14/04/2006<br>
+          Français courant<br>
+          Anglais (intermédiaire)<br>
+          Allemand (LV2)
+        </p>
+      </div>
 
-    <!-- ===== FORMATIONS ===== -->
-    <section id="formations">
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135800.png" alt="Formations">
-        <h2>Formations</h2>
-        <ul>
-            <li><strong>BTS Aéronautique</strong> – Lycée Gérard Etheve (2025-2026)</li>
-            <li><strong>Licence STAPS L1</strong> – Université du Tampon (2025)</li>
-            <li><strong>Baccalauréat Général</strong> – Lycée Le Verger Sainte-Marie (2024)</li>
-            <ul>
-                <li>Spécialités : Mathématiques / Physique-Chimie</li>
-                <li>Mention : Bien</li>
-            </ul>
-            <li><strong>Brevet des Collèges</strong> – Mention Bien (2021)</li>
-        </ul>
-    </section>
-
-    <!-- ===== PARCOURS ===== -->
-    <section id="parcours">
-        <img src="https://cdn-icons-png.flaticon.com/512/3448/3448550.png" alt="Parcours">
-        <h2>Parcours</h2>
-        <p><strong>Cours suivis :</strong> Biomécanique, Physiologie, Économie, Mathématiques, Physique-Chimie, Histoire</p>
-    </section>
-
-    <!-- ===== EXPÉRIENCE ===== -->
-    <section id="experience">
-        <img src="https://cdn-icons-png.flaticon.com/512/1087/1087927.png" alt="Expérience">
-        <h2>Expérience</h2>
-        <p><strong>Stage de découverte de 14 jours</strong> à la <strong>Base Aérienne 181 de La Réunion</strong></p>
-        <ul>
-            <li>Observation et apprentissage sur le <strong>Casa 300</strong> de l’Armée de l’air</li>
-            <li>Découverte de l’<strong>Hélicoptère Dauphin</strong> de la Marine nationale</li>
-        </ul>
-    </section>
-
-    <!-- ===== COMPÉTENCES ===== -->
-    <section id="competences">
-        <img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png" alt="Compétences">
+      <div class="card">
+        <!-- Image pour tes compétences -->
+        <img src="images/competences.jpg" alt="Compétences">
         <h2>Compétences</h2>
-        <ul>
-            <li>Sérieux</li>
-            <li>Autonome</li>
-            <li>Curieux</li>
-        </ul>
-    </section>
+        <p>
+          Sérieux • Autonome • Curieux<br>
+          Esprit d’équipe<br>
+          Connaissances en mécanique et sciences
+        </p>
+      </div>
+    </div>
 
-    <!-- ===== PASSIONS ===== -->
-    <section id="passions">
-        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Passions">
+    <!-- Colonne centrale -->
+    <div class="col">
+      <div class="card">
+        <!-- Image pour ta formation -->
+        <img src="images/formation.jpg" alt="Formations">
+        <h2>Formations</h2>
+        <p>
+          2025 – BTS Aéronautique – Lycée Gérard Etheve<br><br>
+          2024 – Baccalauréat Général<br>
+          (Maths / Physique-Chimie) – Lycée Le Verger<br><br>
+          2021 – Brevet des Collèges (Mention Bien)
+        </p>
+      </div>
+    </div>
+
+    <!-- Colonne droite -->
+    <div class="col">
+      <div class="card">
+        <!-- Image pour ton expérience -->
+        <img src="images/experience.jpg" alt="Expérience">
+        <h2>Expérience</h2>
+        <p>
+          Stage découverte de 14 jours à la base aérienne 181 – La Réunion<br><br>
+          Participation aux opérations sur le CASA 300 de l’Armée de l’air<br>
+          Observation sur l’hélicoptère Dauphin de la Marine nationale
+        </p>
+      </div>
+
+      <div class="card">
+        <!-- Image pour tes passions -->
+        <img src="images/passion.jpg" alt="Passions">
         <h2>Passions</h2>
-        <ul>
-            <li>Sport de combat</li>
-            <li>Randonnée</li>
-            <li>Films et lecture</li>
-        </ul>
-    </section>
+        <p>
+          Sports de combat<br>
+          Randonnée<br>
+          Lecture<br>
+          Films
+        </p>
+      </div>
+    </div>
+  </main>
 
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        📞 0692 37 36 64 | ✉️ <a href="mailto:cherimontnathan@gmail.com">cherimontnathan@gmail.com</a><br>
-        © 2025 - Portfolio Nathan Cherimont
-    </footer>
+  <!-- FOOTER -->
+  <footer>
+    📧 cherimontnathan@gmail.com | ☎️ 0692 37 36 64
+  </footer>
 
 </body>
 </html>
+
 
 
