@@ -4,38 +4,57 @@
     <meta charset="UTF-8">
     <title>Portfolio - Nathan CHERIMONT</title>
     <style>
+        /* ===== STYLE GLOBAL ===== */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.5;
+            line-height: 1.6;
+            background-color: #f4f6f9;
+            color: #333;
         }
+
+        /* ===== HEADER ===== */
         header {
-            background-color: #2c3e50;
+            background: linear-gradient(90deg, #004aad, #0077ff);
             color: white;
-            padding: 20px;
             text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         }
         header h1 {
             margin: 0;
-            font-size: 32px;
+            font-size: 38px;
+            letter-spacing: 1px;
+        }
+        header h2 {
+            margin: 10px 0 5px 0;
+            font-size: 22px;
+            font-weight: normal;
         }
         header p {
-            margin: 5px 0 0 0;
             font-size: 18px;
+            margin: 5px 0;
         }
+
+        /* ===== SECTIONS ===== */
         section {
-            padding: 30px 20px;
-            border-bottom: 1px solid #ddd;
+            background-color: white;
+            margin: 30px auto;
+            padding: 30px 25px;
+            max-width: 900px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         section h2 {
-            color: #2c3e50;
-            font-size: 24px;
-            margin-bottom: 15px;
+            color: #004aad;
+            font-size: 26px;
+            border-bottom: 2px solid #0077ff;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
         }
-        section p, section ul {
-            font-size: 16px;
-            margin-bottom: 10px;
+        section p, section li {
+            font-size: 17px;
         }
         ul {
             padding-left: 20px;
@@ -44,75 +63,75 @@
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- ===== HEADER ===== -->
     <header>
         <h1>CHERIMONT Nathan</h1>
-        <p>Étudiant - BTS Aéronautique 2025-2026</p>
-        <p>Lycée Gerard Etheve</p>
+        <h2>Étudiant en BTS Aéronautique</h2>
+        <p>Lycée Gérard Etheve – Promotion 2025-2026</p>
     </header>
 
-    <!-- Profil -->
+    <!-- ===== PROFIL ===== -->
     <section id="profil">
         <h2>Profil</h2>
-        <p>Téléphone : 0692373664</p>
-        <p>Email : cherimontnathan@gmail.com</p>
-        <p>Adresse : 49 bis rue Marcel, Goulette, Sainte-Marie 97438</p>
-        <p>Date de naissance : 14/04/2006</p>
-        <p>Langues :</p>
+        <p><strong>Téléphone :</strong> 0692 37 36 64</p>
+        <p><strong>Email :</strong> cherimontnathan@gmail.com</p>
+        <p><strong>Adresse :</strong> 49 bis rue Marcel, Goulette, Sainte-Marie 97438</p>
+        <p><strong>Date de naissance :</strong> 14/04/2006</p>
+        <p><strong>Langues :</strong></p>
         <ul>
             <li>Français : courant</li>
             <li>Anglais (LV1) : intermédiaire</li>
             <li>Allemand (LV2)</li>
         </ul>
-        <p>Loisirs : sport de combat, randonnée, films, lecture</p>
+        <p><strong>Loisirs :</strong> sport de combat, randonnée, films, lecture</p>
     </section>
 
-    <!-- Formations -->
+    <!-- ===== FORMATIONS ===== -->
     <section id="formations">
         <h2>Formations</h2>
         <ul>
-            <li>BTS Aéronautique 2025-2026 - Lycée Gerard Etheve</li>
-            <li>STAPS L1 - 2025</li>
-            <li>2024 - Baccalauréat général, Maths / Physique-Chimie - Lycée Le Verger Sainte-Marie 97438</li>
-            <li>Diplômes :</li>
+            <li><strong>BTS Aéronautique</strong> – Lycée Gérard Etheve (2025-2026)</li>
+            <li><strong>Licence STAPS L1</strong> – Université du Tampon (2025)</li>
+            <li><strong>Baccalauréat Général</strong> – Lycée Le Verger Sainte-Marie (2024)</li>
             <ul>
-                <li>2024 - Baccalauréat général, Mention Bien</li>
-                <li>2021 - Brevet des collèges, Mention Bien</li>
+                <li>Spécialités : Mathématiques / Physique-Chimie</li>
+                <li>Mention : Bien</li>
             </ul>
+            <li><strong>Brevet des Collèges</strong> – Mention Bien (2021)</li>
         </ul>
     </section>
 
-    <!-- Parcours -->
+    <!-- ===== PARCOURS ===== -->
     <section id="parcours">
         <h2>Parcours</h2>
-        <p>Cours suivis : Biomécanique, Physiologie, Économie, Mathématiques, Physique-Chimie, Histoire</p>
-        <p>Stage de découverte : Base aérienne militaire 181 de La Réunion</p>
+        <p><strong>Stage de découverte :</strong> Base aérienne militaire 181 de La Réunion</p>
         <ul>
-            <li>Casa 300 - Armée de l’air</li>
-            <li>Hélicoptère Dauphin - Marine nationale</li>
+            <li>Découverte du <strong>Casa 300</strong> – Armée de l’air</li>
+            <li>Découverte de l’<strong>Hélicoptère Dauphin</strong> – Marine nationale</li>
         </ul>
+        <p><strong>Cours suivis :</strong> Biomécanique, Physiologie, Économie, Mathématiques, Physique-Chimie, Histoire</p>
     </section>
 
-    <!-- Expériences -->
+    <!-- ===== EXPÉRIENCES ===== -->
     <section id="experience">
         <h2>Expériences</h2>
-        <p>Production :</p>
+        <p><strong>Production :</strong></p>
         <ul>
             <li>Suivi de la fermentation et de la distillation</li>
             <li>Enregistrement des données</li>
         </ul>
-        <p>Laboratoire :</p>
+        <p><strong>Laboratoire :</strong></p>
         <ul>
             <li>Réalisation de diverses analyses</li>
-            <li>Contrôle matériel</li>
+            <li>Contrôle du matériel</li>
         </ul>
-        <p>Magasins :</p>
+        <p><strong>Magasins :</strong></p>
         <ul>
             <li>Suivi des entrées et sorties d’alcool</li>
         </ul>
     </section>
 
-    <!-- Compétences -->
+    <!-- ===== COMPÉTENCES ===== -->
     <section id="competences">
         <h2>Compétences</h2>
         <ul>
@@ -122,9 +141,9 @@
         </ul>
     </section>
 
-    <!-- Passion / Loisirs -->
+    <!-- ===== PASSIONS ===== -->
     <section id="passion">
-        <h2>Passion / Loisirs</h2>
+        <h2>Passions</h2>
         <ul>
             <li>Sport de combat</li>
             <li>Randonnée</li>
