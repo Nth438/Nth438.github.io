@@ -9,9 +9,18 @@
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
-            background-color: #f4f6f9;
+            background-color: #f5f8fc;
             color: #333;
+        }
+
+        h1, h2 {
+            margin: 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
 
         /* ===== HEADER ===== */
@@ -20,44 +29,90 @@
             color: white;
             text-align: center;
             padding: 40px 20px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            position: relative;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
         }
+
+        header img {
+            position: absolute;
+            top: 10px;
+            width: 120px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .plane-left {
+            left: 20px;
+        }
+
+        .engine-right {
+            right: 20px;
+        }
+
         header h1 {
-            margin: 0;
             font-size: 38px;
             letter-spacing: 1px;
         }
+
         header h2 {
-            margin: 10px 0 5px 0;
+            margin-top: 10px;
             font-size: 22px;
             font-weight: normal;
         }
+
         header p {
             font-size: 18px;
             margin: 5px 0;
         }
 
-        /* ===== SECTIONS ===== */
+        /* ===== SECTION ===== */
         section {
             background-color: white;
             margin: 30px auto;
             padding: 30px 25px;
             max-width: 900px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
+
         section h2 {
             color: #004aad;
             font-size: 26px;
             border-bottom: 2px solid #0077ff;
             padding-bottom: 5px;
             margin-bottom: 20px;
+            text-align: center;
         }
+
+        section img {
+            display: block;
+            margin: 0 auto 15px auto;
+            width: 120px;
+            opacity: 0.9;
+        }
+
         section p, section li {
             font-size: 17px;
+            line-height: 1.6;
         }
+
         ul {
-            padding-left: 20px;
+            padding-left: 25px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #004aad;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            font-size: 18px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -65,6 +120,8 @@
 
     <!-- ===== HEADER ===== -->
     <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Airplane_silhouette.png" alt="Avion" class="plane-left">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Jet_engine_icon.png" alt="Moteur" class="engine-right">
         <h1>CHERIMONT Nathan</h1>
         <h2>Étudiant en BTS Aéronautique</h2>
         <p>Lycée Gérard Etheve – Promotion 2025-2026</p>
@@ -72,6 +129,7 @@
 
     <!-- ===== PROFIL ===== -->
     <section id="profil">
+        <img src="https://cdn-icons-png.flaticon.com/512/2922/2922506.png" alt="Profil">
         <h2>Profil</h2>
         <p><strong>Téléphone :</strong> 0692 37 36 64</p>
         <p><strong>Email :</strong> cherimontnathan@gmail.com</p>
@@ -88,6 +146,7 @@
 
     <!-- ===== FORMATIONS ===== -->
     <section id="formations">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135800.png" alt="Formations">
         <h2>Formations</h2>
         <ul>
             <li><strong>BTS Aéronautique</strong> – Lycée Gérard Etheve (2025-2026)</li>
@@ -103,36 +162,25 @@
 
     <!-- ===== PARCOURS ===== -->
     <section id="parcours">
+        <img src="https://cdn-icons-png.flaticon.com/512/3448/3448550.png" alt="Parcours">
         <h2>Parcours</h2>
-        <p><strong>Stage de découverte :</strong> Base aérienne militaire 181 de La Réunion</p>
-        <ul>
-            <li>Découverte du <strong>Casa 300</strong> – Armée de l’air</li>
-            <li>Découverte de l’<strong>Hélicoptère Dauphin</strong> – Marine nationale</li>
-        </ul>
         <p><strong>Cours suivis :</strong> Biomécanique, Physiologie, Économie, Mathématiques, Physique-Chimie, Histoire</p>
     </section>
 
-    <!-- ===== EXPÉRIENCES ===== -->
+    <!-- ===== EXPÉRIENCE ===== -->
     <section id="experience">
-        <h2>Expériences</h2>
-        <p><strong>Production :</strong></p>
+        <img src="https://cdn-icons-png.flaticon.com/512/1087/1087927.png" alt="Expérience">
+        <h2>Expérience</h2>
+        <p><strong>Stage de découverte de 14 jours</strong> à la <strong>Base Aérienne 181 de La Réunion</strong></p>
         <ul>
-            <li>Suivi de la fermentation et de la distillation</li>
-            <li>Enregistrement des données</li>
-        </ul>
-        <p><strong>Laboratoire :</strong></p>
-        <ul>
-            <li>Réalisation de diverses analyses</li>
-            <li>Contrôle du matériel</li>
-        </ul>
-        <p><strong>Magasins :</strong></p>
-        <ul>
-            <li>Suivi des entrées et sorties d’alcool</li>
+            <li>Observation et apprentissage sur le <strong>Casa 300</strong> de l’Armée de l’air</li>
+            <li>Découverte de l’<strong>Hélicoptère Dauphin</strong> de la Marine nationale</li>
         </ul>
     </section>
 
     <!-- ===== COMPÉTENCES ===== -->
     <section id="competences">
+        <img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png" alt="Compétences">
         <h2>Compétences</h2>
         <ul>
             <li>Sérieux</li>
@@ -142,7 +190,8 @@
     </section>
 
     <!-- ===== PASSIONS ===== -->
-    <section id="passion">
+    <section id="passions">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Passions">
         <h2>Passions</h2>
         <ul>
             <li>Sport de combat</li>
@@ -151,6 +200,13 @@
         </ul>
     </section>
 
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        📞 0692 37 36 64 | ✉️ <a href="mailto:cherimontnathan@gmail.com">cherimontnathan@gmail.com</a><br>
+        © 2025 - Portfolio Nathan Cherimont
+    </footer>
+
 </body>
 </html>
+
 
