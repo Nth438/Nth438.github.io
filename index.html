@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio - Nathan CHERIMONT</title>
+
   <style>
     /* ======== VARIABLES DE COULEURS ======== */
     :root {
       --bg-color: #f4f7fb;
       --text-color: #222;
-      --card-bg: #fff;
+      --card-bg: #ffffff;
       --accent: #0077ff;
       --accent-dark: #004aad;
       --title-color: #004aad;
@@ -26,12 +27,12 @@
 
     /* ======== STYLE GLOBAL ======== */
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: "Segoe UI", sans-serif;
       margin: 0;
       background-color: var(--bg-color);
       color: var(--text-color);
-      scroll-behavior: smooth;
       transition: background 0.3s, color 0.3s;
+      scroll-behavior: smooth;
     }
 
     /* ======== NAVIGATION ======== */
@@ -42,7 +43,7 @@
       justify-content: center;
       align-items: center;
       gap: 25px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -60,7 +61,7 @@
       color: #ffe600;
     }
 
-    /* ======== BOUTON MODE CLAIR/SOMBRE ======== */
+    /* ☀️/🌙 Bouton thème */
     #theme-toggle {
       background-color: transparent;
       border: 2px solid white;
@@ -77,34 +78,49 @@
       color: var(--accent-dark);
     }
 
-    /* ======== HEADER ======== */
+    /* 🛫 HEADER avec image de fond */
     header {
       text-align: center;
-      padding: 70px 20px 40px;
-      background: linear-gradient(180deg, var(--accent-dark), var(--accent));
+      padding: 100px 20px 60px;
       color: white;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      background: url("images/header.jpeg") no-repeat center/cover;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    header h1,
+    header p {
+      position: relative;
+      z-index: 1;
     }
 
     header h1 {
       font-size: 38px;
-      letter-spacing: 1px;
       margin-bottom: 10px;
+      letter-spacing: 1px;
     }
 
     header p {
       font-size: 18px;
-      margin: 3px 0;
+      margin: 5px 0;
     }
 
-    /* ======== SECTIONS ======== */
+    /* 📦 Sections */
     section {
       max-width: 850px;
       margin: 40px auto;
       background: var(--card-bg);
       border-radius: 12px;
       padding: 25px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
       transition: all 0.3s ease;
     }
 
@@ -124,14 +140,14 @@
     }
 
     section h2::after {
-      content: '+';
+      content: "+";
       font-size: 24px;
       color: var(--accent);
       transition: transform 0.3s;
     }
 
     section.active h2::after {
-      content: '−';
+      content: "−";
       color: var(--accent-dark);
       transform: rotate(180deg);
     }
@@ -147,7 +163,18 @@
       display: block;
     }
 
-    /* ======== FOOTER ======== */
+    section img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      transition: transform 0.3s;
+    }
+
+    section img:hover {
+      transform: scale(1.03);
+    }
+
+    /* 📞 Footer */
     footer {
       background: var(--accent-dark);
       color: white;
@@ -156,20 +183,10 @@
       font-size: 18px;
       margin-top: 60px;
     }
-
-    /* ======== ANIMATION ======== */
-    .fade-in {
-      animation: fadeIn 0.6s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
   </style>
 </head>
-<body>
 
+<body>
   <!-- 🧭 Barre de navigation -->
   <nav>
     <a href="#profil">Profil</a>
@@ -181,14 +198,14 @@
   </nav>
 
   <!-- 🏷️ Header -->
-  <header class="fade-in">
+  <header>
     <h1>Nathan CHERIMONT</h1>
     <p>Étudiant en BTS Aéronautique – Lycée Gérard Etheve</p>
     <p>Université du Tampon – La Réunion</p>
   </header>
 
   <!-- 💡 Profil -->
-  <section id="profil" class="fade-in">
+  <section id="profil">
     <h2>Profil</h2>
     <div class="content">
       <p>Né le 14 avril 2006 — Sainte-Marie (97438).</p>
@@ -198,7 +215,7 @@
   </section>
 
   <!-- 🎓 Formations -->
-  <section id="formation" class="fade-in">
+  <section id="formation">
     <h2>Formations</h2>
     <div class="content">
       <p>2025 – BTS Aéronautique – Lycée Gérard Etheve.</p>
@@ -208,25 +225,27 @@
   </section>
 
   <!-- ✈️ Expérience -->
-  <section id="experience" class="fade-in">
+  <section id="experience">
     <h2>Expérience</h2>
     <div class="content">
+      <img src="images/casa.jpeg" alt="Stage à la base aérienne 181" />
       <p>Stage de 14 jours à la Base Aérienne 181 de La Réunion.</p>
       <p>Découverte du CASA 300 (Armée de l’air) et de l’hélicoptère Dauphin (Marine nationale).</p>
     </div>
   </section>
 
   <!-- ⚙️ Compétences -->
-  <section id="competences" class="fade-in">
+  <section id="competences">
     <h2>Compétences</h2>
     <div class="content">
+      <img src="images/competence.jpeg" alt="Compétences et travail" />
       <p>Sérieux, autonome, curieux, esprit d’équipe.</p>
-      <p>Connaissances en mécanique, physique, et informatique.</p>
+      <p>Connaissances en mécanique, physique et informatique.</p>
     </div>
   </section>
 
   <!-- ❤️ Passions -->
-  <section id="passions" class="fade-in">
+  <section id="passions">
     <h2>Passions</h2>
     <div class="content">
       <p>Sports de combat, aviation, randonnée, lecture et exploration scientifique.</p>
@@ -238,16 +257,16 @@
     📧 cherimontnathan@gmail.com | ☎️ 0692 37 36 64
   </footer>
 
-  <!-- 🧠 Script d’interaction -->
+  <!-- 🧠 Script -->
   <script>
-    // --- Ouverture/Fermeture des sections ---
-    document.querySelectorAll("section h2").forEach(titre => {
+    // Ouvrir/Fermer les sections
+    document.querySelectorAll("section h2").forEach((titre) => {
       titre.addEventListener("click", () => {
         titre.parentElement.classList.toggle("active");
       });
     });
 
-    // --- Mode clair/sombre ---
+    // Mode clair/sombre
     const toggle = document.getElementById("theme-toggle");
     toggle.addEventListener("click", () => {
       document.body.classList.toggle("dark");
@@ -256,9 +275,9 @@
         : "🌙 Mode sombre";
     });
   </script>
-
 </body>
 </html>
+
 
 
 
