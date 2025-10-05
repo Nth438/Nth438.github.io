@@ -5,189 +5,261 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio - Nathan CHERIMONT</title>
   <style>
+    /* ======== VARIABLES DE COULEURS ======== */
+    :root {
+      --bg-color: #f4f7fb;
+      --text-color: #222;
+      --card-bg: #fff;
+      --accent: #0077ff;
+      --accent-dark: #004aad;
+      --title-color: #004aad;
+    }
+
+    body.dark {
+      --bg-color: #0e1a26;
+      --text-color: #f5f6f7;
+      --card-bg: #1b2838;
+      --accent: #ffcb05;
+      --accent-dark: #ffe600;
+      --title-color: #ffcb05;
+    }
+
+    /* ======== STYLE GLOBAL ======== */
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      scroll-behavior: smooth;
+      transition: background 0.3s, color 0.3s;
     }
 
-    /* HEADER */
-    header {
-      background-color: #002244;
-      color: white;
-      padding: 30px 20px;
+    /* ======== NAVIGATION ======== */
+    nav {
+      background: linear-gradient(90deg, var(--accent-dark), var(--accent));
+      padding: 15px 0;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
+      gap: 25px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    header img {
-      width: 100px;
-      height: auto;
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 17px;
+      transition: 0.3s;
     }
 
-    header div {
+    nav a:hover {
+      color: #ffe600;
+    }
+
+    /* ======== BOUTON MODE CLAIR/SOMBRE ======== */
+    #theme-toggle {
+      background-color: transparent;
+      border: 2px solid white;
+      color: white;
+      border-radius: 20px;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    #theme-toggle:hover {
+      background-color: white;
+      color: var(--accent-dark);
+    }
+
+    /* ======== HEADER ======== */
+    header {
       text-align: center;
+      padding: 70px 20px 40px;
+      background: linear-gradient(180deg, var(--accent-dark), var(--accent));
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
-    h1 {
-      margin: 0;
-      font-size: 2.2em;
+    header h1 {
+      font-size: 38px;
       letter-spacing: 1px;
-    }
-
-    h2 {
-      color: #003366;
-      font-size: 1.6em;
       margin-bottom: 10px;
     }
 
-    /* LAYOUT PRINCIPAL */
-    main {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 30px;
-      padding: 40px;
+    header p {
+      font-size: 18px;
+      margin: 3px 0;
     }
 
-    /* Colonnes verticales */
-    .col {
+    /* ======== SECTIONS ======== */
+    section {
+      max-width: 850px;
+      margin: 40px auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+    }
+
+    section:hover {
+      transform: scale(1.01);
+    }
+
+    section h2 {
+      color: var(--title-color);
+      cursor: pointer;
+      font-size: 22px;
+      font-weight: bold;
       display: flex;
-      flex-direction: column;
-      gap: 30px;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
     }
 
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.2s ease-in-out;
+    section h2::after {
+      content: '+';
+      font-size: 24px;
+      color: var(--accent);
+      transition: transform 0.3s;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
+    section.active h2::after {
+      content: '−';
+      color: var(--accent-dark);
+      transform: rotate(180deg);
     }
 
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
+    .content {
+      display: none;
+      margin-top: 15px;
+      font-size: 16px;
+      line-height: 1.6;
     }
 
-    p {
-      color: #333;
-      font-size: 1.05em;
-      line-height: 1.5;
+    section.active .content {
+      display: block;
     }
 
-    /* FOOTER */
+    /* ======== FOOTER ======== */
     footer {
-      background-color: #002244;
+      background: var(--accent-dark);
       color: white;
       text-align: center;
-      padding: 20px;
-      font-size: 1.1em;
-      letter-spacing: 0.5px;
+      padding: 25px 15px;
+      font-size: 18px;
+      margin-top: 60px;
+    }
+
+    /* ======== ANIMATION ======== */
+    .fade-in {
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <!-- Image avion (gauche du header) -->
-    <img src="images/avion.png" alt="avion gauche">
+  <!-- 🧭 Barre de navigation -->
+  <nav>
+    <a href="#profil">Profil</a>
+    <a href="#formation">Formations</a>
+    <a href="#experience">Expérience</a>
+    <a href="#competences">Compétences</a>
+    <a href="#passions">Passions</a>
+    <button id="theme-toggle">🌙 Mode sombre</button>
+  </nav>
 
-    <div>
-      <h1>Nathan CHERIMONT</h1>
-      <p>Étudiant en BTS Aéronautique – Lycée Gérard Etheve</p>
-      <p>Université du Tampon – La Réunion</p>
-    </div>
-
-    <!-- Image moteur (droite du header) -->
-    <img src="images/moteur.png" alt="moteur avion">
+  <!-- 🏷️ Header -->
+  <header class="fade-in">
+    <h1>Nathan CHERIMONT</h1>
+    <p>Étudiant en BTS Aéronautique – Lycée Gérard Etheve</p>
+    <p>Université du Tampon – La Réunion</p>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <!-- Colonne gauche -->
-    <div class="col">
-      <div class="card">
-        <!-- Image pour ton profil -->
-        <img src="images/profil.jpg" alt="Photo de profil">
-        <h2>Profil</h2>
-        <p>
-          Né le 14/04/2006<br>
-          Français courant<br>
-          Anglais (intermédiaire)<br>
-          Allemand (LV2)
-        </p>
-      </div>
-
-      <div class="card">
-        <!-- Image pour tes compétences -->
-        <img src="images/competences.jpg" alt="Compétences">
-        <h2>Compétences</h2>
-        <p>
-          Sérieux • Autonome • Curieux<br>
-          Esprit d’équipe<br>
-          Connaissances en mécanique et sciences
-        </p>
-      </div>
+  <!-- 💡 Profil -->
+  <section id="profil" class="fade-in">
+    <h2>Profil</h2>
+    <div class="content">
+      <p>Né le 14 avril 2006 — Sainte-Marie (97438).</p>
+      <p>Langues : Français courant, Anglais intermédiaire, Allemand LV2.</p>
+      <p>Loisirs : sports de combat, randonnée, films, lecture.</p>
     </div>
+  </section>
 
-    <!-- Colonne centrale -->
-    <div class="col">
-      <div class="card">
-        <!-- Image pour ta formation -->
-        <img src="images/formation.jpg" alt="Formations">
-        <h2>Formations</h2>
-        <p>
-          2025 – BTS Aéronautique – Lycée Gérard Etheve<br><br>
-          2024 – Baccalauréat Général<br>
-          (Maths / Physique-Chimie) – Lycée Le Verger<br><br>
-          2021 – Brevet des Collèges (Mention Bien)
-        </p>
-      </div>
+  <!-- 🎓 Formations -->
+  <section id="formation" class="fade-in">
+    <h2>Formations</h2>
+    <div class="content">
+      <p>2025 – BTS Aéronautique – Lycée Gérard Etheve.</p>
+      <p>2024 – Baccalauréat Général (Maths / Physique-Chimie) – Lycée Le Verger, mention Bien.</p>
+      <p>2021 – Brevet des Collèges, mention Bien.</p>
     </div>
+  </section>
 
-    <!-- Colonne droite -->
-    <div class="col">
-      <div class="card">
-        <!-- Image pour ton expérience -->
-        <img src="images/experience.jpg" alt="Expérience">
-        <h2>Expérience</h2>
-        <p>
-          Stage découverte de 14 jours à la base aérienne 181 – La Réunion<br><br>
-          Participation aux opérations sur le CASA 300 de l’Armée de l’air<br>
-          Observation sur l’hélicoptère Dauphin de la Marine nationale
-        </p>
-      </div>
-
-      <div class="card">
-        <!-- Image pour tes passions -->
-        <img src="images/passion.jpg" alt="Passions">
-        <h2>Passions</h2>
-        <p>
-          Sports de combat<br>
-          Randonnée<br>
-          Lecture<br>
-          Films
-        </p>
-      </div>
+  <!-- ✈️ Expérience -->
+  <section id="experience" class="fade-in">
+    <h2>Expérience</h2>
+    <div class="content">
+      <p>Stage de 14 jours à la Base Aérienne 181 de La Réunion.</p>
+      <p>Découverte du CASA 300 (Armée de l’air) et de l’hélicoptère Dauphin (Marine nationale).</p>
     </div>
-  </main>
+  </section>
 
-  <!-- FOOTER -->
+  <!-- ⚙️ Compétences -->
+  <section id="competences" class="fade-in">
+    <h2>Compétences</h2>
+    <div class="content">
+      <p>Sérieux, autonome, curieux, esprit d’équipe.</p>
+      <p>Connaissances en mécanique, physique, et informatique.</p>
+    </div>
+  </section>
+
+  <!-- ❤️ Passions -->
+  <section id="passions" class="fade-in">
+    <h2>Passions</h2>
+    <div class="content">
+      <p>Sports de combat, aviation, randonnée, lecture et exploration scientifique.</p>
+    </div>
+  </section>
+
+  <!-- 📞 Footer -->
   <footer>
     📧 cherimontnathan@gmail.com | ☎️ 0692 37 36 64
   </footer>
 
+  <!-- 🧠 Script d’interaction -->
+  <script>
+    // --- Ouverture/Fermeture des sections ---
+    document.querySelectorAll("section h2").forEach(titre => {
+      titre.addEventListener("click", () => {
+        titre.parentElement.classList.toggle("active");
+      });
+    });
+
+    // --- Mode clair/sombre ---
+    const toggle = document.getElementById("theme-toggle");
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      toggle.textContent = document.body.classList.contains("dark")
+        ? "☀️ Mode clair"
+        : "🌙 Mode sombre";
+    });
+  </script>
+
 </body>
 </html>
+
 
 
 
