@@ -5,37 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio - Nathan CHERIMONT</title>
 
+  <!-- Import de polices modernes -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+
   <style>
-    /* 🎨 PALETTE MODERNE BLEU PROFOND */
+    /* 🎨 PALETTE DE COULEURS ACTUALISÉE */
     :root {
-      --bg-color: #eaf0fa;
+      --bg-color: #f1f5ff;
       --text-color: #1a1a1a;
       --card-bg: #ffffff;
       --accent: #0050ff;
-      --accent-dark: #0036a3;
-      --title-color: #0040c0;
-      --highlight: #00c6ff;
-      --contact-color: #007bff;
+      --accent-dark: #002c87;
+      --title-color: #0036a3;
+      --highlight: #0095ff;
+      --contact-color: #0050ff;
       --shadow: rgba(0, 0, 0, 0.1);
-      --header-font: "Poppins", "Segoe UI", sans-serif;
+      --header-font: "Montserrat", sans-serif;
+      --text-font: "Open Sans", sans-serif;
+      --header-overlay: rgba(0, 0, 50, 0.55);
     }
 
     body.dark {
       --bg-color: #0e1a26;
       --text-color: #f0f0f0;
       --card-bg: #162330;
-      --accent: #00aaff;
-      --accent-dark: #0070ff;
-      --title-color: #00aaff;
-      --highlight: #ffe600;
-      --contact-color: #00d4ff;
+      --accent: #ffd700;
+      --accent-dark: #ffe600;
+      --title-color: #ffe600;
+      --highlight: #fff25a;
+      --contact-color: #ffd700;
       --shadow: rgba(255, 255, 255, 0.08);
-      --header-font: "Poppins", sans-serif;
+      --header-overlay: rgba(0, 0, 0, 0.55);
     }
 
     /* 🌐 GLOBAL */
     body {
-      font-family: "Segoe UI", sans-serif;
+      font-family: var(--text-font);
       margin: 0;
       background-color: var(--bg-color);
       color: var(--text-color);
@@ -45,6 +50,7 @@
 
     h1, h2 {
       margin: 0;
+      font-family: var(--header-font);
     }
 
     /* 🧭 NAVIGATION */
@@ -73,7 +79,7 @@
       color: var(--highlight);
     }
 
-    /* 🌙 BOUTON MODE CLAIR/SOMBRE */
+    /* 🌙 BOUTON MODE */
     #theme-toggle {
       background: none;
       border: 2px solid white;
@@ -104,7 +110,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.5);
+      background: var(--header-overlay);
       z-index: 0;
     }
 
@@ -117,15 +123,15 @@
     header h1 {
       font-size: 46px;
       font-weight: 700;
-      letter-spacing: 1px;
       text-transform: uppercase;
       margin-bottom: 15px;
+      letter-spacing: 1px;
     }
 
     header p {
       font-size: 18px;
       margin-top: 5px;
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
     /* 📦 SECTIONS */
@@ -190,12 +196,12 @@
       transform: scale(1.02);
     }
 
-    /* 📞 FOOTER MODERNE */
+    /* 📞 FOOTER */
     footer {
       background: var(--accent-dark);
       color: white;
       text-align: center;
-      padding: 35px 20px;
+      padding: 40px 20px;
       margin-top: 70px;
       box-shadow: 0 -2px 10px var(--shadow);
     }
@@ -203,14 +209,15 @@
     .footer-contact {
       display: flex;
       justify-content: center;
-      gap: 30px;
+      gap: 40px;
       flex-wrap: wrap;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .footer-contact a {
       color: var(--contact-color);
-      font-weight: 600;
+      font-weight: 700;
+      font-size: 18px;
       text-decoration: none;
       transition: 0.3s;
     }
@@ -260,9 +267,9 @@
     <h2>Formations</h2>
     <div class="content">
       <p>🎓 2025 – <strong>BTS Aéronautique</strong> – Lycée Gérard Etheve.</p>
-      <p>🎓 2024 – <strong>L1 STAPS</strong> – Université de La Réunion : biomécanique, physiologie, anatomie, économie du sport.</p>
-      <p>🎓 2023 – <strong>Baccalauréat Général</strong> (Maths / Physique-Chimie) – Lycée Le Verger, mention Bien.</p>
-      <p>🎓 2021 – Brevet des Collèges, mention Bien.</p>
+      <p>🎓 2024-2025 – <strong>L1 STAPS</strong> – Université de La Réunion : biomécanique, physiologie, anatomie, économie du sport.</p>
+      <p>🎓 2024 – <strong>Baccalauréat Général</strong> (Maths / Physique-Chimie) – Lycée Le Verger.</p>
+      <p>🎓 2021 – Brevet des Collèges.</p>
     </div>
   </section>
 
@@ -282,7 +289,7 @@
     <div class="content">
       <img src="images/competence.jpeg" alt="Compétences et travail" />
       <p>Sérieux, autonome, curieux, esprit d’équipe.</p>
-      <p>Compétences : mécanique, physique, anatomie, biomécanique, informatique et rigueur scientifique.</p>
+      <p>Connaissances : mécanique, physique, biomécanique, anatomie, informatique et rigueur scientifique.</p>
     </div>
   </section>
 
@@ -305,14 +312,12 @@
 
   <!-- 🧠 SCRIPT -->
   <script>
-    // Ouvrir/Fermer les sections
     document.querySelectorAll("section h2").forEach((titre) => {
       titre.addEventListener("click", () => {
         titre.parentElement.classList.toggle("active");
       });
     });
 
-    // Mode clair/sombre
     const toggle = document.getElementById("theme-toggle");
     toggle.addEventListener("click", () => {
       document.body.classList.toggle("dark");
@@ -323,6 +328,7 @@
   </script>
 </body>
 </html>
+
 
 
 
