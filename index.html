@@ -6,34 +6,40 @@
   <title>Portfolio - Nathan CHERIMONT</title>
 
   <style>
-    /* 🎨 PALETTE DE COULEURS */
+    /* 🎨 PALETTE MODERNE BLEU PROFOND */
     :root {
-      --bg-color: #f4f7fb;
+      --bg-color: #eaf0fa;
       --text-color: #1a1a1a;
       --card-bg: #ffffff;
-      --accent: #0077ff;
-      --accent-dark: #004aad;
-      --title-color: #004aad;
+      --accent: #0050ff;
+      --accent-dark: #0036a3;
+      --title-color: #0040c0;
+      --highlight: #00c6ff;
+      --contact-color: #007bff;
       --shadow: rgba(0, 0, 0, 0.1);
+      --header-font: "Poppins", "Segoe UI", sans-serif;
     }
 
     body.dark {
       --bg-color: #0e1a26;
       --text-color: #f0f0f0;
       --card-bg: #162330;
-      --accent: #ffcb05;
-      --accent-dark: #ffe600;
-      --title-color: #ffcb05;
+      --accent: #00aaff;
+      --accent-dark: #0070ff;
+      --title-color: #00aaff;
+      --highlight: #ffe600;
+      --contact-color: #00d4ff;
       --shadow: rgba(255, 255, 255, 0.08);
+      --header-font: "Poppins", sans-serif;
     }
 
-    /* 🌐 STYLE GLOBAL */
+    /* 🌐 GLOBAL */
     body {
-      font-family: "Poppins", "Segoe UI", sans-serif;
+      font-family: "Segoe UI", sans-serif;
       margin: 0;
       background-color: var(--bg-color);
       color: var(--text-color);
-      transition: background 0.3s, color 0.3s;
+      transition: background 0.4s, color 0.4s;
       scroll-behavior: smooth;
     }
 
@@ -64,7 +70,7 @@
     }
 
     nav a:hover {
-      color: #ffe600;
+      color: var(--highlight);
     }
 
     /* 🌙 BOUTON MODE CLAIR/SOMBRE */
@@ -91,6 +97,7 @@
       background: url("images/header.jpeg") no-repeat center/cover;
       color: white;
       position: relative;
+      font-family: var(--header-font);
     }
 
     header::after {
@@ -108,11 +115,11 @@
     }
 
     header h1 {
-      font-size: 44px;
+      font-size: 46px;
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
     header p {
@@ -202,15 +209,15 @@
     }
 
     .footer-contact a {
-      color: #ffe600;
+      color: var(--contact-color);
       font-weight: 600;
       text-decoration: none;
       transition: 0.3s;
     }
 
     .footer-contact a:hover {
+      color: var(--highlight);
       text-decoration: underline;
-      color: white;
     }
 
     footer p {
@@ -235,7 +242,7 @@
   <header>
     <h1>Nathan CHERIMONT</h1>
     <p>Étudiant en BTS Aéronautique – Lycée Gérard Etheve</p>
-    <p>Université du Tampon – La Réunion</p>
+    <p>Université du Tampon – Île de La Réunion</p>
   </header>
 
   <!-- 👤 PROFIL -->
@@ -252,9 +259,10 @@
   <section id="formation">
     <h2>Formations</h2>
     <div class="content">
-      <p>2025 – BTS Aéronautique – Lycée Gérard Etheve.</p>
-      <p>2024 – Baccalauréat Général (Maths / Physique-Chimie) – Lycée Le Verger, mention Bien.</p>
-      <p>2021 – Brevet des Collèges, mention Bien.</p>
+      <p>🎓 2025 – <strong>BTS Aéronautique</strong> – Lycée Gérard Etheve.</p>
+      <p>🎓 2024 – <strong>L1 STAPS</strong> – Université de La Réunion : biomécanique, physiologie, anatomie, économie du sport.</p>
+      <p>🎓 2023 – <strong>Baccalauréat Général</strong> (Maths / Physique-Chimie) – Lycée Le Verger, mention Bien.</p>
+      <p>🎓 2021 – Brevet des Collèges, mention Bien.</p>
     </div>
   </section>
 
@@ -274,7 +282,7 @@
     <div class="content">
       <img src="images/competence.jpeg" alt="Compétences et travail" />
       <p>Sérieux, autonome, curieux, esprit d’équipe.</p>
-      <p>Connaissances en mécanique, physique et informatique.</p>
+      <p>Compétences : mécanique, physique, anatomie, biomécanique, informatique et rigueur scientifique.</p>
     </div>
   </section>
 
@@ -315,6 +323,7 @@
   </script>
 </body>
 </html>
+
 
 
 
