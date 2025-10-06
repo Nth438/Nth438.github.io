@@ -6,28 +6,30 @@
   <title>Portfolio - Nathan CHERIMONT</title>
 
   <style>
-    /* ======== VARIABLES DE COULEURS ======== */
+    /* 🎨 PALETTE DE COULEURS */
     :root {
       --bg-color: #f4f7fb;
-      --text-color: #222;
+      --text-color: #1a1a1a;
       --card-bg: #ffffff;
       --accent: #0077ff;
       --accent-dark: #004aad;
       --title-color: #004aad;
+      --shadow: rgba(0, 0, 0, 0.1);
     }
 
     body.dark {
       --bg-color: #0e1a26;
-      --text-color: #f5f6f7;
-      --card-bg: #1b2838;
+      --text-color: #f0f0f0;
+      --card-bg: #162330;
       --accent: #ffcb05;
       --accent-dark: #ffe600;
       --title-color: #ffcb05;
+      --shadow: rgba(255, 255, 255, 0.08);
     }
 
-    /* ======== STYLE GLOBAL ======== */
+    /* 🌐 STYLE GLOBAL */
     body {
-      font-family: "Segoe UI", sans-serif;
+      font-family: "Poppins", "Segoe UI", sans-serif;
       margin: 0;
       background-color: var(--bg-color);
       color: var(--text-color);
@@ -35,7 +37,11 @@
       scroll-behavior: smooth;
     }
 
-    /* ======== NAVIGATION ======== */
+    h1, h2 {
+      margin: 0;
+    }
+
+    /* 🧭 NAVIGATION */
     nav {
       background: linear-gradient(90deg, var(--accent-dark), var(--accent));
       padding: 15px 0;
@@ -43,16 +49,16 @@
       justify-content: center;
       align-items: center;
       gap: 25px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 2px 8px var(--shadow);
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
       font-size: 17px;
       transition: 0.3s;
     }
@@ -61,13 +67,13 @@
       color: #ffe600;
     }
 
-    /* ☀️/🌙 Bouton thème */
+    /* 🌙 BOUTON MODE CLAIR/SOMBRE */
     #theme-toggle {
-      background-color: transparent;
+      background: none;
       border: 2px solid white;
       color: white;
-      border-radius: 20px;
-      padding: 6px 12px;
+      border-radius: 25px;
+      padding: 5px 12px;
       cursor: pointer;
       font-size: 15px;
       transition: 0.3s;
@@ -78,21 +84,20 @@
       color: var(--accent-dark);
     }
 
-    /* 🛫 HEADER avec image de fond */
+    /* 🛫 HEADER */
     header {
       text-align: center;
-      padding: 100px 20px 60px;
-      color: white;
+      padding: 120px 20px 80px;
       background: url("images/header.jpeg") no-repeat center/cover;
+      color: white;
       position: relative;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
     header::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.5);
       z-index: 0;
     }
 
@@ -103,45 +108,49 @@
     }
 
     header h1 {
-      font-size: 38px;
-      margin-bottom: 10px;
+      font-size: 44px;
+      font-weight: 700;
       letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
     }
 
     header p {
       font-size: 18px;
-      margin: 5px 0;
+      margin-top: 5px;
+      opacity: 0.9;
     }
 
-    /* 📦 Sections */
+    /* 📦 SECTIONS */
     section {
-      max-width: 850px;
+      max-width: 950px;
       margin: 40px auto;
       background: var(--card-bg);
-      border-radius: 12px;
-      padding: 25px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-      transition: all 0.3s ease;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 5px 20px var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     section:hover {
-      transform: scale(1.01);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px var(--shadow);
     }
 
     section h2 {
       color: var(--title-color);
+      font-size: 24px;
       cursor: pointer;
-      font-size: 22px;
-      font-weight: bold;
+      font-weight: 700;
+      margin-bottom: 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 10px;
     }
 
     section h2::after {
       content: "+";
-      font-size: 24px;
+      font-size: 28px;
       color: var(--accent);
       transition: transform 0.3s;
     }
@@ -156,7 +165,7 @@
       display: none;
       margin-top: 15px;
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     section.active .content {
@@ -167,27 +176,52 @@
       width: 100%;
       border-radius: 10px;
       margin-bottom: 15px;
-      transition: transform 0.3s;
+      transition: transform 0.3s ease;
     }
 
     section img:hover {
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
 
-    /* 📞 Footer */
+    /* 📞 FOOTER MODERNE */
     footer {
       background: var(--accent-dark);
       color: white;
       text-align: center;
-      padding: 25px 15px;
-      font-size: 18px;
-      margin-top: 60px;
+      padding: 35px 20px;
+      margin-top: 70px;
+      box-shadow: 0 -2px 10px var(--shadow);
+    }
+
+    .footer-contact {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .footer-contact a {
+      color: #ffe600;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .footer-contact a:hover {
+      text-decoration: underline;
+      color: white;
+    }
+
+    footer p {
+      font-size: 15px;
+      opacity: 0.8;
     }
   </style>
 </head>
 
 <body>
-  <!-- 🧭 Barre de navigation -->
+  <!-- 🧭 NAVBAR -->
   <nav>
     <a href="#profil">Profil</a>
     <a href="#formation">Formations</a>
@@ -197,14 +231,14 @@
     <button id="theme-toggle">🌙 Mode sombre</button>
   </nav>
 
-  <!-- 🏷️ Header -->
+  <!-- 🏷️ HEADER -->
   <header>
     <h1>Nathan CHERIMONT</h1>
     <p>Étudiant en BTS Aéronautique – Lycée Gérard Etheve</p>
     <p>Université du Tampon – La Réunion</p>
   </header>
 
-  <!-- 💡 Profil -->
+  <!-- 👤 PROFIL -->
   <section id="profil">
     <h2>Profil</h2>
     <div class="content">
@@ -214,7 +248,7 @@
     </div>
   </section>
 
-  <!-- 🎓 Formations -->
+  <!-- 🎓 FORMATIONS -->
   <section id="formation">
     <h2>Formations</h2>
     <div class="content">
@@ -224,7 +258,7 @@
     </div>
   </section>
 
-  <!-- ✈️ Expérience -->
+  <!-- ✈️ EXPÉRIENCE -->
   <section id="experience">
     <h2>Expérience</h2>
     <div class="content">
@@ -234,7 +268,7 @@
     </div>
   </section>
 
-  <!-- ⚙️ Compétences -->
+  <!-- ⚙️ COMPÉTENCES -->
   <section id="competences">
     <h2>Compétences</h2>
     <div class="content">
@@ -244,7 +278,7 @@
     </div>
   </section>
 
-  <!-- ❤️ Passions -->
+  <!-- ❤️ PASSIONS -->
   <section id="passions">
     <h2>Passions</h2>
     <div class="content">
@@ -252,12 +286,16 @@
     </div>
   </section>
 
-  <!-- 📞 Footer -->
+  <!-- 📞 FOOTER -->
   <footer>
-    📧 cherimontnathan@gmail.com | ☎️ 0692 37 36 64
+    <div class="footer-contact">
+      <a href="mailto:cherimontnathan@gmail.com">📧 cherimontnathan@gmail.com</a>
+      <a href="tel:+262692373634">📱 +262 6 92 37 36 34</a>
+    </div>
+    <p>© 2025 - Portfolio Nathan Cherimont | Île de La Réunion 🇷🇪</p>
   </footer>
 
-  <!-- 🧠 Script -->
+  <!-- 🧠 SCRIPT -->
   <script>
     // Ouvrir/Fermer les sections
     document.querySelectorAll("section h2").forEach((titre) => {
@@ -277,6 +315,7 @@
   </script>
 </body>
 </html>
+
 
 
 
